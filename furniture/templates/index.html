@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>MFC Sales App</title>
+{% load staticfiles %}
+<link rel="stylesheet" href={% static "mfc.css" %} />
+</head>
+<body>
+<div class = "everything">
+	<h1>MFC Sales App</h1>
+	{% block content %}
+	<form method = "post">
+	Enter Sku: <input type="text" name="request_sku"><br />
+	<input type = "submit" value = "submit_sku">
+	</form>
+
+
+
+
+
+
+
+
+
+
+
+
+	{% content %}	
+</div>
+</body>
+</html>
