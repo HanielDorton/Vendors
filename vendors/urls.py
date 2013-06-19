@@ -7,12 +7,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^$','furniture.views.index'),
     (r'^home/$', 'furniture.views.index'),
-	(r'^login/$', 'furniture.views.login'), 
-	(r'^logout/$', 'furniture.views.logout'),
-	(r'^success/$', 'furniture.views.success'),	
-	(r'^failedlogin/$', 'furniture.views.failedlogin'),	
-
-	(r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'furniture/login.html'}),	
+	(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),	
+	(r'^logout/$', 'furniture.views.logout_view'),
 	
 	
     # Uncomment the admin/doc line below to enable admin documentation:

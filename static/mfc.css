@@ -1,3 +1,58 @@
 body{
-	background-color:red;
+	background-color:rgb(200,146,46);
+	font-family: “Trebuchet MS”, Verdana, Arial, Helvetica, sans-serif;
+}
+h1{
+	text-align:center;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	text-shadow: 0px 2px 3px #555;
+
+}
+.everything{
+	background-color:white;
+	margin:auto;
+	margin-top: 75px;
+	width:800;
+	border:2px solid rgb(43,67,95);
+	border-radius: 15px;
+}
+table{
+	margin-left:100px;
+}
+.login_button{
+	margin-left:400px;
+}
+.logout{
+	float:right;
+	font-size:10px;
+	margin-right:10px;
+}
+.content{
+	margin: 100px;
+}
+.an_aside{
+	font-size:10px;
+}
+ul{
+	list-style-type: none;
+}
+.categories{
+	width:300;
+	float:left;
+}
+.results{
+	width:300;
+	float:right;
+}
+footer{
+	clear:both;
+	margin-top:300px;
+	text-align:center;
+}
+a{
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
 }
