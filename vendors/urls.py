@@ -9,6 +9,8 @@ urlpatterns = patterns('',
     (r'^home/$', 'furniture.views.index'),
 	(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),	
 	(r'^logout/$', 'furniture.views.logout_view'),
+	(r'^MFC_view/$', 'furniture.views.mfc_view'),
+	(r'^customer_view/$', 'furniture.views.customer_view'),
 	
 	
     # Uncomment the admin/doc line below to enable admin documentation:

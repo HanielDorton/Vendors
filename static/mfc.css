@@ -1,5 +1,5 @@
 body{
-	background-color:rgb(200,146,46);
+	background-color:rgb(43,67,95);
 	font-family: “Trebuchet MS”, Verdana, Arial, Helvetica, sans-serif;
 }
 h1{
@@ -13,8 +13,9 @@ h1{
 	background-color:white;
 	margin:auto;
 	margin-top: 75px;
-	width:800;
-	border:2px solid rgb(43,67,95);
+	width:800px;
+	height:620px;
+	border:2px solid black;
 	border-radius: 15px;
 }
 table{
@@ -37,21 +38,21 @@ table{
 ul{
 	list-style-type: none;
 }
+li{
+	margin-bottom: 20px;
+}
 .categories{
-	width:300;
+	width:200;
 	float:left;
 }
 .results{
-	width:300;
+	width:400;
 	float:right;
 }
-footer{
-	clear:both;
-	margin-top:300px;
-	text-align:center;
-}
+
 a{
 	text-decoration:none;
+	color: rgb(200,146,46);
 }
 a:hover{
 	text-decoration:underline;
