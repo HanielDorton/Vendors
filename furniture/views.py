@@ -26,8 +26,8 @@ def get_item_and_vendor_info(request):
 
 
 def index(request):
-	#if not request.user.is_authenticated():
-		#return redirect('/login/')
+	if not request.user.is_authenticated():
+		return redirect('/login/')
 	return render_to_response('index.html')
 
 def customer_view(request):
