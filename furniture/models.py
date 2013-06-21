@@ -4,6 +4,7 @@ class vendor(models.Model):
 
 	name = models.CharField(max_length=25)
 	multy = models.FloatField(default=0)
+	shipping = models.CharField(max_length=100)
 
 	def __unicode__(self):
 		return self.name
