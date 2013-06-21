@@ -61,12 +61,12 @@ STATIC_ROOT= os.path.join(PROJECT_DIR,'staticfiles/')
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 #STATIC_URL = 'http://danielhorton.site11.com/static/'
-STATIC_URL = os.path.join(PROJECT_DIR,'staticfiles/')
+STATIC_URL = os.path.join(PROJECT_ROOT,'staticfiles/')
 
 # Additional locations of static files
 STATICFILES_DIRS = (
 
-os.path.join(PROJECT_ROOT,'staticfiles/'),
+#os.path.join(PROJECT_ROOT,'staticfiles/'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
