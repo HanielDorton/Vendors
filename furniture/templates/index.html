@@ -17,16 +17,36 @@
 	
 	<div class = "content">
 	{% block content %}
-	Choose:
-	<a href = "/MFC_view">MFC View</a>
-	<a href = "/customer_view">Customer View</a>
 
-	
-	
-	{% endblock %}	
+	<div class = "choose_site">
+		<a href = "/MFC_view">MFC View</a>
 	</div>
+	<div class = "choose_site">
+		<a href = "/customer_view">Customer View</a>
+	</div>
+	
+	<form method = "post" action = ".">
+		{% csrf_token %}
+		Enter City: <input type="text" name="city_lookup">
+		<input type = "submit" value = "Search"> 
+	</form>
 
-
+	
+	<div class = "categories">
+		<ul>
+			<li>City:</li>
+			<li>Rate:</li>
+			<li>County:</li>
+		</ul>
+	</div>
+	<div class = "results">
+		<ul>
+			<li>{{ salestax.city }}</li>
+			<li>{{ salestax.rate }}</li>
+			<li>{{salestax.county}}</li>
+		</ul>
+	</div>
+	{% endblock %}	
 </div>
 
 </body>

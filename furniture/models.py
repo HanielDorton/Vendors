@@ -26,4 +26,4 @@ class salestax(models.Model):
 	county = models.CharField(max_length=50)
 
 	def __unicode__(self):
-		return self.name
+		return self.city

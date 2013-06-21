@@ -28,7 +28,15 @@ def get_item_and_vendor_info(request):
 def index(request):
 	if not request.user.is_authenticated():
 		return redirect('/login/')
-	return render_to_response('index.html')
+	try:
+		current_city = salestax.objects.get(city__iexact=request.POST['city_lookup'])
+		current_city.rate *= 100
+		current_city.rate = str(current_city.rate)+' %'
+	except ObjectDoesNotExist:
+		current_city = {'city':'', 'rate':'', 'county':''}
+	except KeyError:
+		current_city = {'city':'', 'rate':'', 'county':''}
+	return render_to_response('index.html', {'salestax':current_city}, context_instance=RequestContext(request))
 
 def customer_view(request):
 	current_item, current_vendor, sell = get_item_and_vendor_info(request)
