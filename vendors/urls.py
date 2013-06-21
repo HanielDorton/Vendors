@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-
+from vendors import settings
 import autocomplete_light
 autocomplete_light.autodiscover()
 
@@ -16,7 +16,7 @@ urlpatterns = patterns('',
 	(r'^logout/$', 'furniture.views.logout_view'),
 	(r'^MFC_view/$', 'furniture.views.mfc_view'),
 	(r'^customer_view/$', 'furniture.views.customer_view'),
-	(r'^static/(.*)$', 'django.views.static.serve', {'document_root': 'settings.STATIC_ROOT'}),
+	(r'^static/(.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 	
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
