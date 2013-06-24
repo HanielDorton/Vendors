@@ -29,20 +29,13 @@
 	</div>
 	
 	<div class = "tax">
-	Sales tax lookup by city: <br />
+	Sales tax lookup: <br />
 	<form method = "post" action = ".">
 		{% csrf_token %}
-		<input type="text" name="city_lookup" id="taxInput">
+		{{ form.city }}
 		<input type = "submit" value = "Search"> 
 	</form>
 	<br />	
-	<script type="text/javascript">
-        $(document).ready(function () {
-            $('#taxInput').yourlabsAutocomplete({
-                url: '/autocomplete/salestaxtaxautocomplete/'
-
-            }}
-	</script type="text/javascript">
 
 	<div class = "categories">
 		<ul>

@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, logout
 from furniture.models import *
 from django.template import RequestContext
 from django.core.exceptions import ObjectDoesNotExist
+from furniture import forms
 
 def get_item_and_vendor_info(request):
 	try:
@@ -24,15 +25,16 @@ def get_item_and_vendor_info(request):
 
 
 def index(request):
+	form = forms.taxForm(request.POST)
 	try:
-		current_city = salestax.objects.get(city__iexact=request.POST['city_lookup'])
+		current_city = salestax.objects.get(city__iexact=request.POST['city'])
 		current_city.rate *= 100
 		current_city.rate = str(current_city.rate)+' %'
 	except ObjectDoesNotExist:
 		current_city = {'city':'', 'rate':'', 'county':''}
 	except KeyError:
 		current_city = {'city':'', 'rate':'', 'county':''}
-	return render_to_response('index.html', {'salestax':current_city}, context_instance=RequestContext(request))
+	return render_to_response('index.html', {'salestax':current_city, 'form':form}, context_instance=RequestContext(request))
 
 def customer_view(request):
 	current_item, current_vendor, sell = get_item_and_vendor_info(request)

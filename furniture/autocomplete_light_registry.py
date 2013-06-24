@@ -1,7 +1,7 @@
 import autocomplete_light
 from models import salestax
 
-class taxautocomplete(autocomplete_light.AutocompleteModelBase):
-	search_fields = ['^city',]
 	
-autocomplete_light.register(salestax, taxautocomplete)
+autocomplete_light.register(salestax, autocomplete_js_attributes={
+'placeholder': '(enter city)',
+    },search_fields=['city',])
