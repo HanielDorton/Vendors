@@ -1,8 +1,11 @@
+<!doctype html>
 <html>
 <head>
 <title>MFC Sales App</title>
 {% load static from staticfiles %}
 <link rel="stylesheet" href={% static "mfc.css" %} />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+{% include 'autocomplete_light/static.html' %}
 </head>
 
 <body>
@@ -25,13 +28,22 @@
 		<a href = "/customer_view">Customer View</a>
 	</div>
 	
+	<div class = "tax">
+	Sales tax lookup by city: <br />
 	<form method = "post" action = ".">
 		{% csrf_token %}
-		Enter City: <input type="text" name="city_lookup">
+		<input type="text" name="city_lookup" id="taxInput">
 		<input type = "submit" value = "Search"> 
 	</form>
+	<br />	
+	<script type="text/javascript">
+        $(document).ready(function () {
+            $('#taxInput').yourlabsAutocomplete({
+                url: '/autocomplete/salestaxtaxautocomplete/'
 
-	
+            }}
+	</script type="text/javascript">
+
 	<div class = "categories">
 		<ul>
 			<li>City:</li>
@@ -39,6 +51,7 @@
 			<li>County:</li>
 		</ul>
 	</div>
+	
 	<div class = "results">
 		<ul>
 			<li>{{ salestax.city }}</li>
@@ -46,8 +59,12 @@
 			<li>{{salestax.county}}</li>
 		</ul>
 	</div>
+	</div>
+
 	{% endblock %}	
 </div>
+
+
 
 </body>
 </html>

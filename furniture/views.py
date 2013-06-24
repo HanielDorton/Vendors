@@ -24,8 +24,6 @@ def get_item_and_vendor_info(request):
 
 
 def index(request):
-	if not request.user.is_authenticated():
-		return redirect('/login/')
 	try:
 		current_city = salestax.objects.get(city__iexact=request.POST['city_lookup'])
 		current_city.rate *= 100
@@ -48,5 +46,5 @@ def mfc_view(request):
 	
 def logout_view(request):
 	logout(request)
-	return redirect('/login/')
+	return redirect('/')
 	

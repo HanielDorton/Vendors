@@ -41,13 +41,17 @@ ul{
 li{
 	margin-bottom: 20px;
 }
+.tax {
+	font-size:10px;
+	margin-top:100px;
+}
 .categories{
 	width:200;
 	float:left;
 }
 .results{
 	width:400;
-	float:right;
+	float:left;
 }
 .choose_site{
 	margin:auto;
@@ -58,8 +62,6 @@ li{
 	border-radius: 15px;
 	margin-bottom:50px;
 	text-align:center;
-	display:block;
-	overflow:hidden;
 }
 .choose_site:hover{
 	background-color:rgb(43,67,95);

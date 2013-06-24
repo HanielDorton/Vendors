@@ -1,4 +1,5 @@
 from django.db import models
+from django.core import urlresolvers
 
 class vendor(models.Model):
 
@@ -28,3 +29,6 @@ class salestax(models.Model):
 
 	def __unicode__(self):
 		return self.city
+	
+	def get_absolute_url(self):
+		return urlresolvers.reverse('non_admin:widget_update', args=(self.pk,))
