@@ -1,5 +1,6 @@
 from django import forms
 
+import autocomplete_light_registry
 import autocomplete_light
 
 from models import salestax
