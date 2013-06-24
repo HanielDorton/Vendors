@@ -1,7 +1,7 @@
 # Django settings for vendors project.
 import dj_database_url
 import os
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (    
