@@ -29,7 +29,7 @@ def index(request):
 	form = forms.taxForm(request.POST)
 	try:
 		current_city = salestax.objects.get(city__iexact=request.POST['city'])
-		current_city.rate *= 100
+		#current_city.rate *= 100.00
 		current_city.rate = str(current_city.rate)+' %'
 	except ObjectDoesNotExist:
 		current_city = {'city':'', 'rate':'', 'county':''}
