@@ -1,4 +1,6 @@
 from django.conf.urls import patterns, include, url
+from django.conf import settings 
+from django.conf.urls.defaults import *
 from vendors import settings
 import autocomplete_light
 autocomplete_light.autodiscover()
