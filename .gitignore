@@ -1,0 +1,9 @@
+.Python
+env
+bin
+lib
+include
+.DS_Store
+*.pyc
+venv
+vendors/testsettings.py

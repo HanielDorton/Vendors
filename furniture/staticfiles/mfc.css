@@ -1,0 +1,81 @@
+body{
+	background-color:rgb(43,67,95);
+	font-family: “Trebuchet MS”, Verdana, Arial, Helvetica, sans-serif;
+}
+h1{
+	text-align:center;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	text-shadow: 0px 2px 3px #555;
+
+}
+.everything{
+	background-color:white;
+	margin:auto;
+	margin-top: 75px;
+	width:800px;
+	height:700px;
+	border:2px solid black;
+	border-radius: 15px;
+}
+table{
+	margin-left:100px;
+}
+.login_button{
+	margin-left:400px;
+}
+.logout{
+	float:right;
+	font-size:10px;
+	margin-right:10px;
+}
+.content{
+	margin: 100px;
+}
+.an_aside{
+	font-size:10px;
+}
+ul{
+	list-style-type: none;
+}
+li{
+	margin-bottom: 20px;
+}
+.tax {
+	font-size:10px;
+	margin-top:100px;
+}
+.categories{
+	width:200;
+	float:left;
+}
+.results{
+	width:400;
+	float:left;
+}
+.choose_site{
+	margin:auto;
+	width:250px;
+	font-size:30px;
+	background-color: rgb(200,146,46);
+	border:2px solid black;
+	border-radius: 15px;
+	margin-bottom:50px;
+	text-align:center;
+}
+.choose_site:hover{
+	background-color:rgb(43,67,95);
+}
+.choose_site a{
+	color:black;
+}
+.choose_site a:hover{
+	text-decoration:none;
+}
+a{
+	text-decoration:none;
+	color: rgb(200,146,46);
+}
+a:hover{
+	text-decoration:underline;
+}
