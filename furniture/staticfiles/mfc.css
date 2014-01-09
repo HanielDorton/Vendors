@@ -1,5 +1,5 @@
 body{
-	background-color:rgb(108,1258,0);
+	background-color:rgb(108,153,52);
 	font-family: “Trebuchet MS”, Verdana, Arial, Helvetica, sans-serif;
 }
 h1{
@@ -64,7 +64,7 @@ li{
 	text-align:center;
 }
 .choose_site:hover{
-	background-color:rgb(108,1258,0); 
+	background-color:rgb(108,153,52); 
 }
 .choose_site a{
 	color:black;
