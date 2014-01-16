@@ -29,6 +29,10 @@ table{
 	font-size:10px;
 	margin-right:10px;
 }
+.vendors{
+	color: black;
+	font-size:15px;
+}
 .content{
 	margin: 100px;
 }

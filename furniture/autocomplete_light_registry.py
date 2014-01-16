@@ -1,5 +1,5 @@
 import autocomplete_light
-from models import salestax, item
+from models import salestax, item, vendor
 
 	
 autocomplete_light.register(salestax, autocomplete_js_attributes={
@@ -7,7 +7,15 @@ autocomplete_light.register(salestax, autocomplete_js_attributes={
     }
 	,search_fields=['city',],
 	)
-	
-autocomplete_light.register(item, autocomplete_js_attributes={
-'placeholder': '(enter sku)',
-    },search_fields=['sku',])
+
+vendors = vendor.objects.all()
+
+for vendor in vendors:
+
+	autocomplete_light.register(item, name=str(vendor.name.replace(" ", "")), 
+							choices=item.objects.filter(vendor_id=vendor.id),
+							autocomplete_js_attributes={
+														'placeholder': '(enter sku)',
+							},search_fields=['sku',])
+
+

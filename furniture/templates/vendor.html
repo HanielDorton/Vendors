@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+	{% block content %}
+
+	{% load staticfiles %}
+	<link rel="stylesheet" href={% static "mfc_view.css" %} />
+	<div class= "vendors">
+	<ul>
+	{% for vendor in all_vendors %}
+		
+		<li>
+			<a href = "/{{view}}/{{vendor.id}}"> {{vendor.name}} </a>	
+			
+	
+	{% endfor %}
+	</ul>
+	</div>
+		
+	{% endblock %}	
