@@ -4,9 +4,10 @@
 
 	{% load staticfiles %}
 	
-	{% if {{view}} == "MFC_view"%}
+	{% if view == "MFC_view" %}
 	
 		<link rel="stylesheet" href={% static "mfc_view.css" %} />
+		
 	{% endif %}
 	
 	<div class= "vendors">
