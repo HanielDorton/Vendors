@@ -3,7 +3,12 @@
 	{% block content %}
 
 	{% load staticfiles %}
-	<link rel="stylesheet" href={% static "mfc_view.css" %} />
+	
+	{% if {{view}} == "MFC_view"%}
+	
+		<link rel="stylesheet" href={% static "mfc_view.css" %} />
+	{% endif %}
+	
 	<div class= "vendors">
 	<ul>
 	{% for vendor in all_vendors %}
