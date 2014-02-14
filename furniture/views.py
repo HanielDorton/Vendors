@@ -43,35 +43,25 @@ def index(request):
 		current_city = {'city':'', 'rate':'', 'county':''}
 	return render_to_response('index.html', {'salestax':current_city, 'form':form}, context_instance=RequestContext(request))
 
-def customer_view(request, vendor_view):
+def item_search(request, view_choice, vendor_choice):
+	if view_choice == "MFC_view":
+		if not request.user.is_authenticated():
+			return redirect('/login/')
 	try:
-		vendor_view_name = vendor.objects.get(id=vendor_view).name
+		vendor_view_name = vendor.objects.get(id=vendor_choice).name
 	except ObjectDoesNotExist:
 		vendor_view_name = ""
 	except KeyError:
 		vendor_view_name = ""
-	current_item, current_vendor, sell, form = get_item_and_vendor_info(request, vendor_view)
-	return render_to_response('customer_view.html', {'vendor_view_name':vendor_view_name, 'item':current_item, 'vendor': current_vendor, 'sell':sell, 'form':form}, context_instance=RequestContext(request))
-	
-def mfc_view(request, vendor_view):
-	if not request.user.is_authenticated():
-		return redirect('/login/')
-	try:
-		vendor_view_name = vendor.objects.get(id=vendor_view).name
-	except ObjectDoesNotExist:
-		vendor_view_name = ""
-	except KeyError:
-		vendor_view_name = ""
-	current_item, current_vendor, sell, form = get_item_and_vendor_info(request, vendor_view)
-	return render_to_response('MFC_view.html', {'vendor_view_name':vendor_view_name, 'item':current_item, 'vendor': current_vendor, 'sell':sell, 'form':form}, context_instance=RequestContext(request))
+	current_item, current_vendor, sell, form = get_item_and_vendor_info(request, vendor_choice)
+	return render_to_response('item_search.html', {'view_choice': view_choice, 'vendor_view_name':vendor_view_name, 'item':current_item, 'vendor': current_vendor, 'sell':sell, 'form':form}, context_instance=RequestContext(request))
 
-def vendors(request, view):
-	if view == 'MFC_view':
+def vendors_list(request, view_choice):
+	if view_choice == 'MFC_view':
 		if not request.user.is_authenticated():
 			return redirect('/login/')
 	all_vendors = vendor.objects.all().order_by('name')
-	return render_to_response('vendor.html', {'all_vendors': all_vendors, 'view': view})
-	
+	return render_to_response('vendor.html', {'all_vendors': all_vendors, 'view_choice': view_choice})
 	
 def logout_view(request):
 	logout(request)

@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'vendors',  #on test this says furniture?? - research.
 	'autocomplete_light',
+	'south',
 )
 
 # A sample logging configuration. The only tangible logging

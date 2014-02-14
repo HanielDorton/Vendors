@@ -4,7 +4,7 @@
 
 	{% load staticfiles %}
 	
-	{% if view == "MFC_view" %}
+	{% if view_choice == "MFC_view" %}
 	
 		<link rel="stylesheet" href={% static "mfc_view.css" %} />
 		
@@ -15,7 +15,7 @@
 	{% for vendor in all_vendors %}
 		
 		<li>
-			<a href = "/{{view}}/{{vendor.id}}"> {{vendor.name}} </a>	
+			<a href = "/{{view_choice}}/{{vendor.id}}/search/"> {{vendor.name}} </a>	
 			
 	
 	{% endfor %}
