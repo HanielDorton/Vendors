@@ -5,7 +5,9 @@ import sys
 if __name__ == "__main__":
 
 	#LIVE:
+	
 	os.environ.setdefault("DJANGO_SETTINGS_MODULE", "vendors.settings")
+	
 	#TEST: (uses static files form heroku server still )
 	#os.environ.setdefault("DJANGO_SETTINGS_MODULE", "vendors.TESTsettings")
 
