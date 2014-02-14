@@ -16,16 +16,12 @@ urlpatterns = patterns('',
     (r'^home/$', 'furniture.views.index'),
 	(r'^login/$', 'django.contrib.auth.views.login',),	
 	(r'^logout/', 'furniture.views.logout_view'),
-	#(r'^MFC_view/$', 'furniture.views.mfc_view'),
-	#(r'^customer_view/$', 'furniture.views.customer_view'),
-	(r'^static/(.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-	
-	#adding vendor filter
 	(r'^(MFC_view)/$', 'furniture.views.vendors'),
 	(r'^(customer_view)/$', 'furniture.views.vendors'),
-	
 	(r'^MFC_view/([0-9]|[1-9][0-9])/$', 'furniture.views.mfc_view'),
 	(r'^customer_view/([0-9]|[1-9][0-9])/$', 'furniture.views.customer_view'),
+	(r'^static/(.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+	
 
 	
 	

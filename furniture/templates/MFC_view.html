@@ -3,7 +3,7 @@
 {% block content %}
 
 {% load staticfiles %}
-<link rel="stylesheet" href={% static "mfc_view.css" %} />
+<link rel="stylesheet" href=/{% static "mfc_view.css" %} />
 
 		<form method = "post" action = ".">
 		{% csrf_token %}
