@@ -30,7 +30,7 @@ def get_item_and_vendor_info(request, vendor_view):
 	current_vendor = {'name':'','multy':'', 'shipping':''}
 	sell = ''
 	return current_item, current_vendor, sell, form
-
+	
 def index(request):
 	form = forms.taxForm(request.POST)
 	try:
@@ -43,6 +43,39 @@ def index(request):
 		current_city = {'city':'', 'rate':'', 'county':''}
 	return render_to_response('index.html', {'salestax':current_city, 'form':form}, context_instance=RequestContext(request))
 
+def vendors_list(request, view_choice):
+	if view_choice == 'MFC_view':
+		if not request.user.is_authenticated():
+			return redirect('/login/')
+	all_vendors = vendor.objects.all().order_by('name')
+	return render_to_response('vendor.html', {'all_vendors': all_vendors, 'view_choice': view_choice})
+	
+def vendor_info(request, view_choice, vendor_choice):
+	if not request.user.is_authenticated():
+		return redirect('/login/')
+	try:
+		current_vendor = vendor.objects.get(id=vendor_choice).parent_id
+		parent_choice = parent_vendor.objects.get(id=current_vendor)	
+	except ObjectDoesNotExist:
+		parent_choice = ""
+	except KeyError:
+		parent_choice = ""	
+	try:
+		contacts = contact.objects.filter(parent=parent_choice.id)
+	except ObjectDoesNotExist:
+		contacts = ""
+	except KeyError:
+		contacts = ""
+	"""
+	try:
+		catalogues = catalogue.objects.get(parent=parent_choice.id)	
+	except ObjectDoesNotExist:
+		catalogues = ""
+	except KeyError:
+		catalogues = ""
+	"""
+	return render_to_response('vendor_info.html', {'contacts':contacts,'parent_choice':parent_choice})	
+	
 def item_search(request, view_choice, vendor_choice):
 	if view_choice == "MFC_view":
 		if not request.user.is_authenticated():
@@ -56,13 +89,7 @@ def item_search(request, view_choice, vendor_choice):
 	current_item, current_vendor, sell, form = get_item_and_vendor_info(request, vendor_choice)
 	return render_to_response('item_search.html', {'view_choice': view_choice, 'vendor_view_name':vendor_view_name, 'item':current_item, 'vendor': current_vendor, 'sell':sell, 'form':form}, context_instance=RequestContext(request))
 
-def vendors_list(request, view_choice):
-	if view_choice == 'MFC_view':
-		if not request.user.is_authenticated():
-			return redirect('/login/')
-	all_vendors = vendor.objects.all().order_by('name')
-	return render_to_response('vendor.html', {'all_vendors': all_vendors, 'view_choice': view_choice})
-	
+
 def logout_view(request):
 	logout(request)
 	return redirect('/')
