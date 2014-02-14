@@ -74,7 +74,7 @@ def vendor_info(request, view_choice, vendor_choice):
 	except KeyError:
 		catalogues = ""
 	"""
-	return render_to_response('vendor_info.html', {'contacts':contacts,'parent_choice':parent_choice})	
+	return render_to_response('vendor_info.html', {'contacts':contacts,'parent_choice':parent_choice, 'view_choice':view_choice })	
 	
 def item_search(request, view_choice, vendor_choice):
 	if view_choice == "MFC_view":
