@@ -9,35 +9,27 @@
 		<link rel="stylesheet" href={% static "mfc_view.css" %} />
 		
 	{% endif %}
+	
 	<div class= "vendors">
 	
 	{% if view_choice == "MFC_view" %}
-	<div class = "categories">
-	<ul>
-	<li>Vendor Information</li>
-	{% for vendor in all_vendors %}		
-		<li>
-			<a href = "/{{view_choice}}/{{vendor.id}}/"> {{vendor.name}} </a>	
-				
-	{% endfor %}
-	</ul>
-	</div>
+		<div class = "categories">
+			<ul>
+				<li>Vendor Information</li>
+				{% for vendor in all_vendors %}		
+					<li> <a href = "/{{view_choice}}/{{vendor.id}}/"> {{ vendor.name }} </a> </li>
+				{% endfor %}
+			</ul>
+		</div>
 	{% endif %}
-	
-	
-	
-	
-	
 	
 
 	<div class = "results">
 	<ul>
-	<li>Item Look-up</li>
-	{% for vendor in all_vendors %}		
-		<li>
-			<a href = "/{{view_choice}}/{{vendor.id}}/search/"> {{vendor.name}} </a>	
-				
-	{% endfor %}
+		<li>Item Look-up</li>
+		{% for vendor in all_vendors %}		
+			<li> <a href = "/{{view_choice}}/{{vendor.id}}/search/"> {{ vendor.name }} </a>	</li>
+		{% endfor %}
 	</ul>
 	</div>
 	</div>

@@ -4,23 +4,20 @@
 
 	{% load staticfiles %}
 	
-	{% if view_choice == "MFC_view" %}
+	<link rel="stylesheet" href={% static "mfc_view.css" %} />
 	
-		<link rel="stylesheet" href={% static "mfc_view.css" %} />
-		
-	{% endif %}
-	
-	<b><a href = "{{parent_choice.website}}">{{parent_choice.name}}</a></b>
+	<b><a href = "{{ parent_choice.website }}">{{ parent_choice.name }}</a></b>
 	<p>
-	{{parent_choice.address}}	
+	{{ parent_choice.address }}	
 	<p>
 	<b>Contacts</b>
 	<p>
-	<ul>
+	
 	{% for contact in contacts %}	
-		<li>{{ contact.name }}, {{contact.title}}</li>
-		<li>{{contact.phone}}</li>
-		<li>{{contact.email}} </li>
+		{{ contact.name }}, {{ contact.title }}, {{ contact.phone }}, {{ contact.email }} 
+		<p>
 	{% endfor %}
-	</ul>
+	
+	<b> Search: </b> <a href= "search/"> {{ current_vendor.name }} </a>
+
 	{% endblock %}	

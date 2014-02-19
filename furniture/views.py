@@ -35,7 +35,6 @@ def index(request):
 	form = forms.taxForm(request.POST)
 	try:
 		current_city = salestax.objects.get(city__iexact=request.POST['city'])
-		#current_city.rate *= 100.00
 		current_city.rate = str(current_city.rate)+' %'
 	except ObjectDoesNotExist:
 		current_city = {'city':'', 'rate':'', 'county':''}
@@ -54,8 +53,8 @@ def vendor_info(request, view_choice, vendor_choice):
 	if not request.user.is_authenticated():
 		return redirect('/login/')
 	try:
-		current_vendor = vendor.objects.get(id=vendor_choice).parent_id
-		parent_choice = parent_vendor.objects.get(id=current_vendor)	
+		current_vendor = vendor.objects.get(id=vendor_choice) #.parent_id
+		parent_choice = parent_vendor.objects.get(id=current_vendor.parent_id)	
 	except ObjectDoesNotExist:
 		parent_choice = ""
 	except KeyError:
@@ -74,7 +73,7 @@ def vendor_info(request, view_choice, vendor_choice):
 	except KeyError:
 		catalogues = ""
 	"""
-	return render_to_response('vendor_info.html', {'contacts':contacts,'parent_choice':parent_choice, 'view_choice':view_choice })	
+	return render_to_response('vendor_info.html', {'contacts':contacts,'parent_choice':parent_choice, 'current_vendor': current_vendor })	
 	
 def item_search(request, view_choice, vendor_choice):
 	if view_choice == "MFC_view":
