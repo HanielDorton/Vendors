@@ -13,6 +13,8 @@ def get_item_and_vendor_info(request, vendor_view):
 		form = forms.CMAmberForm(request.POST)
 	elif vendor_view == '4':
 		form = forms.BossForm(request.POST)
+	elif vendor_view == '6':
+		form = forms.CMRespondForm(request.POST)
 	else:
 		form = forms.USForm(request.POST)
 	try:
@@ -65,14 +67,6 @@ def vendor_info(request, view_choice, vendor_choice):
 		contacts = ""
 	except KeyError:
 		contacts = ""
-	"""
-	try:
-		catalogues = catalogue.objects.get(parent=parent_choice.id)	
-	except ObjectDoesNotExist:
-		catalogues = ""
-	except KeyError:
-		catalogues = ""
-	"""
 	return render_to_response('vendor_info.html', {'contacts':contacts,'parent_choice':parent_choice, 'current_vendor': current_vendor })	
 	
 def item_search(request, view_choice, vendor_choice):
