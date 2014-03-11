@@ -20,7 +20,7 @@ def get_item_and_vendor_info(request, vendor_view):
 	elif vendor_view == '7':
 		form = forms.CMVerdeForm(request.POST)
 	elif vendor_view == '8':
-		form = forms.CMVRubyForm(request.POST)
+		form = forms.CMRubyForm(request.POST)
 	else:
 		form = forms.USForm(request.POST)
 	try:
