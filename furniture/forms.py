@@ -24,7 +24,15 @@ class CMAmberForm(forms.Form):
 class BossForm(forms.Form):
     request_sku = forms.CharField(
         widget=autocomplete_light.TextWidget("Boss"))
+		
+class FriantGitanaForm(forms.Form):
+    request_sku = forms.CharField(
+        widget=autocomplete_light.TextWidget("FriantGitana"))
 
 class CMRespondForm(forms.Form):
     request_sku = forms.CharField(
         widget=autocomplete_light.TextWidget("CherrymanRespond"))
+		
+class CMVerdeForm(forms.Form):
+    request_sku = forms.CharField(
+        widget=autocomplete_light.TextWidget("CherrymanVerde"))

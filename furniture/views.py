@@ -13,8 +13,12 @@ def get_item_and_vendor_info(request, vendor_view):
 		form = forms.CMAmberForm(request.POST)
 	elif vendor_view == '4':
 		form = forms.BossForm(request.POST)
+	elif vendor_view == '5':
+		form = forms.FriantGitanaForm(request.POST)
 	elif vendor_view == '6':
 		form = forms.CMRespondForm(request.POST)
+	elif vendor_view == '7':
+		form = forms.CMVerdeForm(request.POST)
 	else:
 		form = forms.USForm(request.POST)
 	try:
