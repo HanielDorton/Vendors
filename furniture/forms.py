@@ -36,3 +36,7 @@ class CMRespondForm(forms.Form):
 class CMVerdeForm(forms.Form):
     request_sku = forms.CharField(
         widget=autocomplete_light.TextWidget("CherrymanVerde"))
+		
+class CMRubyForm(forms.Form):
+    request_sku = forms.CharField(
+        widget=autocomplete_light.TextWidget("CherrymanRuby"))
