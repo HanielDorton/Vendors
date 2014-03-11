@@ -28,7 +28,8 @@ def get_item_and_vendor_info(request, vendor_view):
 	else:
 		form = forms.USForm(request.POST)
 	try:
-		current_item = item.objects.get(sku__iexact=request.POST['request_sku'])
+		request_sku = request.POST['request_sku'].replace(" ", "")
+		current_item = item.objects.get(sku__iexact=request_sku)
 		current_vendor = vendor.objects.get(id=current_item.vendor_id)
 		sell = current_item.cost*current_vendor.multy
 		if sell > current_item.list:
