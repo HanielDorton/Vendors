@@ -23,6 +23,8 @@ def get_item_and_vendor_info(request, vendor_view):
 		form = forms.CMRubyForm(request.POST)
 	elif vendor_view == '9':
 		form = forms.CMJadeForm(request.POST)
+	elif vendor_view == '10':
+		form = forms.CMEmeraldForm(request.POST)
 	else:
 		form = forms.USForm(request.POST)
 	try:
