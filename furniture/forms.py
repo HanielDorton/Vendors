@@ -40,3 +40,7 @@ class CMVerdeForm(forms.Form):
 class CMRubyForm(forms.Form):
     request_sku = forms.CharField(
         widget=autocomplete_light.TextWidget("CherrymanRuby"))
+		
+class CMJadeForm(forms.Form):
+    request_sku = forms.CharField(
+        widget=autocomplete_light.TextWidget("CherrymanJade"))
