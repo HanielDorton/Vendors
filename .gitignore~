@@ -6,4 +6,4 @@ include
 .DS_Store
 *.pyc
 venv
-vendors/TESTsettings.py*
+vendors/TESTsettings.py
