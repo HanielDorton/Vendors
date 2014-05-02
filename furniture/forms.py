@@ -9,19 +9,19 @@ class taxForm(forms.Form):
     city = forms.CharField(
         widget=autocomplete_light.TextWidget('salestaxAutocomplete'))
 
-class USForm(forms.Form):
+class ABCFurnitureChairsForm(forms.Form):
     request_sku = forms.CharField(
         widget=autocomplete_light.TextWidget("ABCFurnitureChairs"))
 
-class DMIFairplexForm(forms.Form):
+class ABCFurnitureDesksForm(forms.Form):
     request_sku = forms.CharField(
         widget=autocomplete_light.TextWidget("ABCFurnitureDesks"))
 		
-class CMAmberForm(forms.Form):
+class XYZElectronicsForm(forms.Form):
     request_sku = forms.CharField(
         widget=autocomplete_light.TextWidget("XYZElectronics"))
 		
-class BossForm(forms.Form):
+class MNOChairsForm(forms.Form):
     request_sku = forms.CharField(
         widget=autocomplete_light.TextWidget("MNOChairs"))
 		
