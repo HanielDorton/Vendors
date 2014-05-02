@@ -11,40 +11,18 @@ class taxForm(forms.Form):
 
 class USForm(forms.Form):
     request_sku = forms.CharField(
-        widget=autocomplete_light.TextWidget("UnitedStationers"))
+        widget=autocomplete_light.TextWidget("ABCFurnitureChairs"))
 
 class DMIFairplexForm(forms.Form):
     request_sku = forms.CharField(
-        widget=autocomplete_light.TextWidget("DMIFairplex"))
+        widget=autocomplete_light.TextWidget("ABCFurnitureDesks"))
 		
 class CMAmberForm(forms.Form):
     request_sku = forms.CharField(
-        widget=autocomplete_light.TextWidget("CherrymanAmber"))
+        widget=autocomplete_light.TextWidget("XYZElectronics"))
 		
 class BossForm(forms.Form):
     request_sku = forms.CharField(
-        widget=autocomplete_light.TextWidget("Boss"))
+        widget=autocomplete_light.TextWidget("MNOChairs"))
 		
-class FriantGitanaForm(forms.Form):
-    request_sku = forms.CharField(
-        widget=autocomplete_light.TextWidget("FriantGitana"))
 
-class CMRespondForm(forms.Form):
-    request_sku = forms.CharField(
-        widget=autocomplete_light.TextWidget("CherrymanRespond"))
-		
-class CMVerdeForm(forms.Form):
-    request_sku = forms.CharField(
-        widget=autocomplete_light.TextWidget("CherrymanVerde"))
-		
-class CMRubyForm(forms.Form):
-    request_sku = forms.CharField(
-        widget=autocomplete_light.TextWidget("CherrymanRuby"))
-		
-class CMJadeForm(forms.Form):
-    request_sku = forms.CharField(
-        widget=autocomplete_light.TextWidget("CherrymanJade"))
-		
-class CMEmeraldForm(forms.Form):
-    request_sku = forms.CharField(
-        widget=autocomplete_light.TextWidget("CherrymanEmerald"))
