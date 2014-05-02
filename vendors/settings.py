@@ -1,7 +1,7 @@
 # Django settings for vendors project.
 import dj_database_url
 import os
-from secret_key.py import *
+from secretkey.py import *
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
