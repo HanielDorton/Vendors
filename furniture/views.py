@@ -7,11 +7,11 @@ from django.core.exceptions import ObjectDoesNotExist
 from furniture import forms
 
 def get_item_and_vendor_info(request, vendor_view):
-	if vendor_view == '2':
+	if vendor_view == '6':
 		form = forms.ABCFurnitureDesksForm(request.POST)
-	elif vendor_view == '3':
+	elif vendor_view == '7':
 		form = forms.XYZElectronicsForm(request.POST)
-	elif vendor_view == '4':
+	elif vendor_view == '8':
 		form = forms.MNOChairsForm(request.POST)
 	else:
 		form = forms.ABCFurnitureChairsForm(request.POST)
