@@ -1,7 +1,6 @@
 # Django settings for vendors project.
 import dj_database_url
 import os
-from vendors import secretkey # see below;
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
@@ -81,7 +80,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-#SECRET_KEY = used to be a long string here moved to secretkey.py which is kept in vendors folder and just has this one line;
+SECRET_KEY = os.environ['SECRET']
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
