@@ -12,8 +12,10 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	# Index #
-    (r'^$','furniture.views.index'),
+
+   	(r'^$','furniture.views.index'),
 	(r'^home/$', 'furniture.views.index'),
+	url(r'^admin/', include(admin.site.urls)),
 	# Login / Log out #
 	(r'^login/$', 'django.contrib.auth.views.login',),	
 	(r'^logout/$', 'furniture.views.logout_view'),
@@ -32,7 +34,7 @@ urlpatterns = patterns('',
 	# Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     # Uncomment the next line to enable the admin:
-     url(r'^admin/', include(admin.site.urls)),
+     
 	 url(r'^autocomplete/', include('autocomplete_light.urls')),
 	 
 	 

@@ -8,3 +8,4 @@ include
 *.py~
 venv
 vendors/TESTsettings.py*
+*.*~
